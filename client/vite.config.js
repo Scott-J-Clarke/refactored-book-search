@@ -8,6 +8,9 @@ export default defineConfig({
     port: 3000,
     open: true,
     proxy: {
+      // Uncomment '/graphql': { once 'queries' and 'mutations' are built in 'client' folder:
+      // '/graphql': {
+      // Comment out '/api': { once 'queries' and 'mutations' are built in 'client' folder:
       '/api': {
         target: 'http://localhost:3001',
         secure: false,
