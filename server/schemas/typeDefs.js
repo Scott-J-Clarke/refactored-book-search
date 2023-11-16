@@ -8,6 +8,7 @@ const typeDefs = `
     }
 
     type Book {
+        _id: ID
         authors: [String]
         description: String!
         bookId: String!
@@ -17,14 +18,14 @@ const typeDefs = `
     }
 
     type Query {
-        getUserById(userId: ID!): User
-        getUsers: [User]  
+        users: [User] 
+        getSingleUser(username: String!, email: String!): User
     }
 
     type Mutation {
-        addUser(username: String!, email: String! password: String!): User
-        updateUser(userId: Id!, username: String!, password: String!): User
-        deleteUser(userId: Id!): User
+        createUser(username: String!, email: String! password: String!): User
+        saveBook(description: String!, bookId: String!, title: String!): User
+        deleteBook(bookId: String!): Book
     }
 `;
 

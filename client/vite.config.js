@@ -9,9 +9,9 @@ export default defineConfig({
     open: true,
     proxy: {
       // Uncomment '/graphql': { once 'queries' and 'mutations' are built in 'client' folder:
-      // '/graphql': {
+      '/graphql': {
       // Comment out '/api': { once 'queries' and 'mutations' are built in 'client' folder:
-      '/api': {
+      // '/api': {
         target: 'http://localhost:3001',
         secure: false,
         changeOrigin: true
