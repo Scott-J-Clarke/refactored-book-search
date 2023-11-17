@@ -24,7 +24,12 @@ const server = new ApolloServer({
 });
 
 // Apply Apollo server with Express app:
-server.applyMiddleware({ app });
+async function startApolloServer() {
+  await server.start();
+  server.applyMiddleware({ app });
+}
+
+startApolloServer();
 
 // Middleware parsing:
 app.use(express.urlencoded({ extended: true }));
