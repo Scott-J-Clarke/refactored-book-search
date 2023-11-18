@@ -10,7 +10,7 @@ const typeDefs = gql`
     }
 
     type Book {
-        bookId: String!        
+        bookId: ID!        
         authors: [String]
         description: String!
         title: String!
@@ -21,6 +21,15 @@ const typeDefs = gql`
     type Auth {
         token: ID!
         user: User
+    }
+
+    input BookData {
+        bookId: String!
+        authors: [String]
+        description: String!
+        title: String!
+        image: String
+        link: String
     }
 
     type Query {
@@ -40,12 +49,7 @@ const typeDefs = gql`
         ): Auth
 
         saveBook(
-            bookId: String!
-            authors: [String]
-            description: String!
-            title: String!
-            image: String
-            link: String
+           book: BookData!
         ): User
 
         removeBook(
